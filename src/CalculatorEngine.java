@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class CalculatorEngine {
 	private int value;
 	private int keep;
@@ -25,6 +27,10 @@ public class CalculatorEngine {
 		binaryOperation('/');
 	}
 	
+	void power(){
+		binaryOperation('P');
+	}
+	
 	void compute(){
 		if(toDo=='+')
 			value = keep+value;
@@ -34,6 +40,10 @@ public class CalculatorEngine {
 			value = keep*value;
 		else if(toDo=='/')
 			value = keep/value;
+		else if(toDo=='P'){
+			double i = 1.0;
+			value = (int)Math.pow(i*keep, i*value);
+		}
 		keep = 0;
 	}
 	

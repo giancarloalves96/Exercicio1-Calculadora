@@ -26,6 +26,8 @@ public class CalculatorInput {
 					engine.multiply();
 				else if(c=='/')
 					engine.divide();
+				else if(c=='P')
+					engine.power();
 				else if(c>='0' && c<='9')
 					engine.digit(c-'0');
 				else if(c=='=')
