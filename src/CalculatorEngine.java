@@ -40,6 +40,10 @@ public class CalculatorEngine {
 		unaryOperation('s');
 	}
 	
+	void prime(){
+		unaryOperation('p');
+	}
+	
 	void compute(){
 		if(toDo=='+')
 			value = keep+value;
@@ -57,6 +61,11 @@ public class CalculatorEngine {
 			double i = 1.0;
 			value = (int)Math.sqrt(i*value);
 		}
+		else if(toDo=='p'){
+			if(checkPrime(value))
+				value=1;
+			else value=0;
+		}
 		keep = 0;
 	}
 	
@@ -67,6 +76,19 @@ public class CalculatorEngine {
 	
 	void digit(int x){
 		value = value*10+x;
+	}
+	
+	private boolean checkPrime(int x){
+		if(x==1 || x==0)
+			return false;
+		if(x<0)
+			x=-x;
+		boolean IsPrime = true;
+		for(int i = 2; i<Math.sqrt(1.0*x)+1 && IsPrime; i++){
+			if(x%i==0)
+				IsPrime = false;
+		}
+		return IsPrime;
 	}
 	
 	int display(){

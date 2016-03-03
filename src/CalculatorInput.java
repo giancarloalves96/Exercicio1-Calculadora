@@ -30,6 +30,8 @@ public class CalculatorInput {
 					engine.power();
 				else if(c=='s')
 					engine.sroot();
+				else if(c=='p')
+					engine.prime();
 				else if(c>='0' && c<='9')
 					engine.digit(c-'0');
 				else if(c=='=')
