@@ -11,6 +11,11 @@ public class CalculatorEngine {
 		toDo = op;
 	}
 	
+	void unaryOperation(char op){
+		keep = 0;
+		toDo = op;
+	}
+	
 	void add(){
 		binaryOperation('+');
 	}
@@ -31,6 +36,10 @@ public class CalculatorEngine {
 		binaryOperation('P');
 	}
 	
+	void sroot(){
+		unaryOperation('s');
+	}
+	
 	void compute(){
 		if(toDo=='+')
 			value = keep+value;
@@ -43,6 +52,10 @@ public class CalculatorEngine {
 		else if(toDo=='P'){
 			double i = 1.0;
 			value = (int)Math.pow(i*keep, i*value);
+		}
+		else if(toDo=='s'){
+			double i = 1.0;
+			value = (int)Math.sqrt(i*value);
 		}
 		keep = 0;
 	}
